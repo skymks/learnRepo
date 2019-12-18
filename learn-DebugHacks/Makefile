@@ -1,16 +1,20 @@
 CFLAGS=-g
+BuildPath=build
 
-all:segfault
+programs:=$(patsubst %.c,%,$(wildcard *.c))
+
+all:$(programs)
 	@echo 'DebugHacks'
-	mv 
+	mkdir -p $(BuildPath)
+	mv $+ $(BuildPath)
 
-segfault:
+$(programs):
 
-.PHONY all
+.PHONY: all
 
-.PHONY clean
+.PHONY: clean
 
 clean: 
-	rm  
+	rm -rf $(BuildPath)  
 
 
