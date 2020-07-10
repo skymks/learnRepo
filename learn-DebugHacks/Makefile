@@ -1,4 +1,5 @@
-CFLAGS=-g -lpthread
+CFLAGS=-g -pthread -Og
+
 BuildPath=build
 
 programs:=$(patsubst %.c,%,$(wildcard *.c))
